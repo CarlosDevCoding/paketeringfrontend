@@ -1,0 +1,72 @@
+.home-container {
+  background: #e7c7b3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0 0 0;
+}
+.gomoku-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+.divider {
+  width: 95%;
+  height: 20px;
+  background: #f8efdd;
+  margin-bottom: 32px;
+}
+.players-section {
+  background: #f8efdd;
+  border-radius: 4px;
+  padding: 32px 32px 24px 32px;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.player-icon {
+  margin-bottom: 8px;
+}
+.player-label {
+  background: #d3d3d3;
+  color: #222;
+  padding: 6px 18px;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  margin-top: 4px;
+}
+.scoreboard-section {
+  margin: 32px 0 0 0;
+  text-align: center;
+}
+.scoreboard-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+.scoreboard-list {
+  font-size: 1.1rem;
+  color: #222;
+}
+.new-game-btn {
+  margin-top: auto;
+  margin-bottom: 24px;
+  background: #d3d3d3;
+  color: #222;
+  font-size: 1.3rem;
+  padding: 6px 40px;
+  border: 1px solid #888;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.new-game-btn:hover {
+  background: #bdbdbd;
+}
