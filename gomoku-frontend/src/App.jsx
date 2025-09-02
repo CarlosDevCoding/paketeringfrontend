@@ -10,7 +10,6 @@ function App() {
           <Route path="/game" /*element={X}*/ />
         </Routes>
       </Router>
-      {/* Render the HomeScreen UI */}
       <HomeScreen />
     </>
   )
