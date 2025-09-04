@@ -1,12 +1,29 @@
 .player-input {
+<<<<<<< HEAD:gomoku-frontend/src/Containers/HomeScreen.css
+=======
   width: 100px;
   min-width: 0;
+>>>>>>> 62c197a3d7cb01e1502e375ee600b44b6a019897:gomoku-frontend/src/Components/Homescreen/HomeScreen.css
   display: inline-block;
+  min-width: 20px;
   padding: 4px 8px;
   font-size: 1rem;
   box-sizing: content-box;
+  border: 1px solid #888;
+  border-radius: 3px;
+  background: #fff;
+  outline: none;
+  /* Optional: mimic input focus */
 }
-
+.player-input:focus {
+  border-color: #555;
+  background: #f0f0f0;
+}
+.player-input:empty:before {
+  content: attr(data-placeholder);
+  color: #aaa;
+  pointer-events: none;
+}
 .home-container {
   background: #e7c7b3;
   min-height: 100vh;

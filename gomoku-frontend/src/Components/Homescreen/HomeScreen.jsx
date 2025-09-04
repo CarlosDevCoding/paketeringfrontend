@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./HomeScreen.css";
 
 const HomeScreen = () => {
+  const [player1, setPlayer1] = useState("");
+  const player1Ref = useRef(null);
+
+  const handleInput = (e) => {
+    setPlayer1(e.target.innerText);
+  };
+
   return (
     <div className="home-container">
       <h1 className="gomoku-title">GOMOKU</h1>
@@ -12,11 +19,15 @@ const HomeScreen = () => {
             <circle cx="24" cy="16" r="8" stroke="#222" strokeWidth="2" />
             <path d="M12 40c0-6.627 7.163-12 16-12s16 5.373 16 12" stroke="#222" strokeWidth="2" fill="none" />
           </svg>
-           <input
-    type="text"
-    placeholder="Player 1"
-    className="player-input"
-  />
+          <span
+            className="player-input"
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+            spellCheck={false}
+            ref={player1Ref}
+            onInput={handleInput}
+            data-placeholder="Player 1"
+          />
         </div>
         <div className="player">
           <svg className="player-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
