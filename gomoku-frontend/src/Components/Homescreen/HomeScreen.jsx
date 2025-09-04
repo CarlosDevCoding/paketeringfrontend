@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router";
 import "./HomeScreen.css";
 
 const HomeScreen = () => {
@@ -44,7 +45,9 @@ const HomeScreen = () => {
           <div>Player 2</div>          
           <div>Player 3</div>
         </div>
-        <button className="new-game-btn">New Game</button>
+        <Link to="/game">
+          <button className="new-game-btn">New Game</button>
+        </Link>
       </div>
     </div>
   );

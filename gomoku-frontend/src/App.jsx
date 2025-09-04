@@ -1,19 +1,18 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
+
+import GameContainer from "./Containers/GameContainer";
+import HomeScreen from "./Components/Homescreen/HomeScreen";
 
 function App() {
 
   return (
     <>
-      <Router>
         <Routes>
-          <Route path="/" /*element={X}*/ />
-          <Route path="/game" /*element={X}*/ />
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/game" element={<GameContainer />} />
         </Routes>
-      </Router>
-      <HomeScreen />
     </>
   )
 }
 
 export default App
-import HomeScreen from "./Containers/HomeScreen";
