@@ -1,0 +1,24 @@
+.app-footer {
+  width: 100%;
+  background-color: #fdf3e0; /* ljus beige */
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #d3c8bd;
+  border: 1px solid #999;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.footer-button:hover {
+  background-color: #c2b6ab;
+}
