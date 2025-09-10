@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GameComponent from "../Components/GameComponent/GameComponent";
 import './GameBoardContainer.css'
 import Footer from "../Components/Footer/Footer";
+import Header from "../Components/Header/Header";
+
+
 
 const GameContainer = () => {
   const createEmptyBoard = () => {
@@ -12,6 +15,15 @@ const GameContainer = () => {
   };
 
   const [board, setBoard] = useState(createEmptyBoard);
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds + 1);
+    }, 1000);
+
+    return()=> clearInterval(timer);
+  }, []);
 
   const handleCellClick = (row, col) => {
     console.log("HELLO");
@@ -19,10 +31,17 @@ const GameContainer = () => {
 
   const handleRestart = () => {
     setBoard(createEmptyBoard());
+    setSeconds(0);
   };
 
   return (
     <div className="game-container">
+      <Header
+        tittle="Goumoku"
+        seconds={seconds}
+        leftContent={<span>Player 1</span>}
+        rightContent={<span>Player 2</span>}
+      />
       <GameComponent board={board} onCellClick={handleCellClick} />
       <Footer buttonText="Restart" onButtonClick={handleRestart} />
     </div>
