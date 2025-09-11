@@ -1,5 +1,5 @@
 import { ApiProvider } from './ApiProvider';
-import { ConfigProvider } from './ConfigProvider';
+import { ConfigProvider } from './ConfigProvider/ConfigProvider';
 import { AuthProvider } from './AuthProvider';
 
 export function AppProvider({ children }) {
