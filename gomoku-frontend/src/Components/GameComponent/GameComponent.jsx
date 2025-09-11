@@ -1,6 +1,5 @@
-// src/Components/GameComponent/GameComponent.jsx
-import './GameBoardComponent.css';
-import Cell from '../Cell/Cell.jsx'; //  import av Cell
+import "./GameBoardComponent.css";
+import Cell from "../Cell/Cell.jsx";
 
 export default function GameComponent({ board, onCellClick }) {
   return (

@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import GameComponent from "../Components/GameComponent/GameComponent";
-import './GameBoardContainer.css'
+import "./GameBoardContainer.css";
 import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 
-
-
 const GameContainer = () => {
   const createEmptyBoard = () => {
-    const emptyBoard = Array(15).fill(null).map(() => Array(15).fill(null));
-    emptyBoard[7][7] = 'black';
-    emptyBoard[7][8] = 'white';
+    const emptyBoard = Array(15)
+      .fill(null)
+      .map(() => Array(15).fill(null));
+    emptyBoard[7][7] = "black";
+    emptyBoard[7][8] = "white";
     return emptyBoard;
   };
 
