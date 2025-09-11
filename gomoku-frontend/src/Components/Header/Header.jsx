@@ -10,16 +10,16 @@ export default function Header({ title, subtitle, leftContent, rightContent, sec
 
   return (
     <header className="app-header">
-      <div className="header-top">
-        <div className="header-left">{leftContent}</div>
-        <h1 className="header-title">{title}</h1>
-        <div className="header-right">{rightContent}</div>
-      </div>
+  <div className="header-top">
+    <div className="header-left">{leftContent}</div>
+    <div className="header-center">
+      <button className="score-btn">Score</button>
+      <div className="timer">Time: {formatTime(seconds)}</div>
+    </div>
+    <div className="header-right">{rightContent}</div>
+  </div>
+  <h1 className="header-title">{title}</h1>
+</header>
 
-      <div className="header-subtitle">
-        <button className="score-btn">Score</button>
-        <div className="timer">Time: {formatTime(seconds)}</div>
-      </div>
-    </header>
   );
 }

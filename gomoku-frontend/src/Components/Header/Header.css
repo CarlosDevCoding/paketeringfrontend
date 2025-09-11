@@ -1,49 +1,43 @@
 .app-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #e6c2ab;
-  padding: 8px 16px;
-  border-bottom: 2px solid #b2896b;
+  background-color: #e6b89c;
+  padding: 10px;
+  text-align: center;
 }
 
 .header-top {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
-}
-
 .header-left,
 .header-right {
-  font-size: 1rem;
+  flex: 1;
   font-weight: bold;
+  text-align: center;
 }
 
-.header-subtitle {
-  margin-top: 4px;
+.header-center {
+  flex: 2;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  font-size: 0.9rem;
+  justify-content: center;
+}
+
+.header-title {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .score-btn {
-  padding: 4px 10px;
-  border: 1px solid #333;
-  background-color: #fff;
-  border-radius: 4px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
 .timer {
+  font-size: 18px;
   font-weight: bold;
 }
