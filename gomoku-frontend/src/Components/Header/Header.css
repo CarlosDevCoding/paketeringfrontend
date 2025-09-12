@@ -1,0 +1,43 @@
+.app-header {
+  background-color: #e6b89c;
+  padding: 10px;
+  text-align: center;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  flex: 1;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header-center {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.score-btn {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+}

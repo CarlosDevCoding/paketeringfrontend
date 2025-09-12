@@ -1,0 +1,25 @@
+import './Header.css';
+import React from "react";
+
+export default function Header({ title, subtitle, leftContent, rightContent, seconds }) {
+  const formatTime = (totalSeconds) => {
+    const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+    const secs = String(totalSeconds % 60).padStart(2, "0");
+    return `${minutes}:${secs}`;
+  };
+
+  return (
+    <header className="app-header">
+  <div className="header-top">
+    <div className="header-left">{leftContent}</div>
+    <div className="header-center">
+      <button className="score-btn">Score</button>
+      <div className="timer">Time: {formatTime(seconds)}</div>
+    </div>
+    <div className="header-right">{rightContent}</div>
+  </div>
+  <h1 className="header-title">{title}</h1>
+</header>
+
+  );
+}
