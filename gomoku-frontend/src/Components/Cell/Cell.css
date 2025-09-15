@@ -1,11 +1,13 @@
 .cell {
   width: 32px;
   height: 32px;
-  border: 1px solid #999;
+  background-color: #e6d2b7;
+  border: 1px solid #654321;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .cell.empty {
@@ -14,8 +16,22 @@
 
 .cell.black {
   background-color: black;
+  border-radius: 50%;
+  border: 2px solid #000;
 }
 
 .cell.white {
   background-color: white;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.cell.black:hover,
+.cell.white:hover {
+  cursor: not-allowed;
+}
+
+.cell.empty:hover {
+  cursor: pointer;
+  background-color: #d4c4a8;
 }

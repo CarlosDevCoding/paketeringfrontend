@@ -9,8 +9,7 @@ const GameContainer = () => {
     const emptyBoard = Array(15)
       .fill(null)
       .map(() => Array(15).fill(null));
-    emptyBoard[7][7] = "black";
-    emptyBoard[7][8] = "white";
+
     return emptyBoard;
   };
 
