@@ -23,8 +23,6 @@ const HomeScreen = () => {
           <span
             className="player-input"
             contentEditable="true"
-            suppressContentEditableWarning={true}
-            spellCheck={false}
             ref={player1Ref}
             onInput={handleInput}
             data-placeholder="Player 1"
@@ -35,7 +33,13 @@ const HomeScreen = () => {
             <circle cx="24" cy="16" r="8" stroke="#222" strokeWidth="2" />
             <path d="M12 40c0-6.627 7.163-12 16-12s16 5.373 16 12" stroke="#222" strokeWidth="2" fill="none" />
           </svg>
-          <div className="player-label">Player 2</div>
+         <span
+            className="player-input"
+            contentEditable="true"
+            ref={player1Ref}
+            onInput={handleInput}
+            data-placeholder="Player 2"
+          />
         </div>
       </div>
       <div className="scoreboard-section">
@@ -44,6 +48,7 @@ const HomeScreen = () => {
           <div>Player 1</div> 
           <div>Player 2</div>          
           <div>Player 3</div>
+          <div><br /></div>
         </div>
         <Link to="/game">
           <button className="new-game-btn">New Game</button>

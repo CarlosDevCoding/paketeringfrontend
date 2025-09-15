@@ -1,6 +1,6 @@
 .app-footer {
   width: 100%;
-  background-color: #fdf3e0; /* ljus beige */
+  background-color: #fdf3e0; 
   padding: 1rem;
   text-align: center;
 }
@@ -8,6 +8,7 @@
 .footer-inner {
   display: flex;
   justify-content: center;
+  gap: 1rem; /* så de inte sitter ihop */
 }
 
 .footer-button {

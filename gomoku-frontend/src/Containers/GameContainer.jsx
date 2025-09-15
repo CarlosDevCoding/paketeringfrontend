@@ -15,16 +15,22 @@ const GameContainer = () => {
   };
 
   const [seconds, setSeconds] = useState(0);
+<<<<<<< HEAD
   const [board, setBoard] = useState(createEmptyBoard);
   const [currentPlayer, setCurrentPlayer] = useState("black");
+=======
+  const[paused, setPaused] = useState(false);
+>>>>>>> c4a737cccc81b79f88b842c4b5fe285ad067406d
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSeconds((prevSeconds) => prevSeconds + 1);
-    }, 1000);
+useEffect(() => {
+  if (paused) return; 
+  const timer = setInterval(() => {
+    setSeconds((prevSeconds) => prevSeconds + 1);
+  }, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+  return () => clearInterval(timer);
+}, [paused]);
+
 
   const handleCellClick = (row, col) => {
     if (board[row][col] !== null) {
@@ -53,7 +59,7 @@ const GameContainer = () => {
         currentPlayer={currentPlayer}
       />
       <GameComponent board={board} onCellClick={handleCellClick} />
-      <Footer buttonText="Restart" onButtonClick={handleRestart} />
+      <Footer onRestartClick={handleRestart} onPauseClick={()=>setPaused(!paused)} paused={paused}/>
     </div>
   );
 };
