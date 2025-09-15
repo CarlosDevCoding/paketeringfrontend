@@ -16,7 +16,6 @@ export default function Header({
 
   return (
     <header className="app-header">
-<<<<<<< HEAD
       <div className="header-top">
         <div
           className={`header-left ${currentPlayer === "black" ? "pulse" : ""}`}
@@ -30,18 +29,15 @@ export default function Header({
           {rightContent}
         </div>
       </div>
-=======
-  <div className="header-top">
-    <div className="header-left">{leftContent}</div>
-    <div className="header-center">
-      <button className="score-btn">Score</button>
-      <div className="timer">Time: {formatTime(seconds)}</div>
-    </div>
-    <div className="header-right">{rightContent}</div>
-  </div>
-  <h1 className="header-title">{title}</h1>
-</header>
->>>>>>> c4a737cccc81b79f88b842c4b5fe285ad067406d
-
+      <div className="header-top">
+        <div className="header-left">{leftContent}</div>
+        <div className="header-center">
+          <button className="score-btn">Score</button>
+          <div className="timer">Time: {formatTime(seconds)}</div>
+        </div>
+        <div className="header-right">{rightContent}</div>
+      </div>
+      <h1 className="header-title">{title}</h1>
+    </header>
   );
 }
