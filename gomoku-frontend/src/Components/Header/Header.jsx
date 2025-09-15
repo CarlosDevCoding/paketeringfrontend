@@ -1,7 +1,13 @@
-import './Header.css';
-import React from "react";
+import "./Header.css";
 
-export default function Header({ title, subtitle, leftContent, rightContent, seconds }) {
+export default function Header({
+  title,
+  subtitle,
+  leftContent,
+  rightContent,
+  seconds,
+  currentPlayer,
+}) {
   const formatTime = (totalSeconds) => {
     const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
     const secs = String(totalSeconds % 60).padStart(2, "0");
@@ -11,9 +17,17 @@ export default function Header({ title, subtitle, leftContent, rightContent, sec
   return (
     <header className="app-header">
       <div className="header-top">
-        <div className="header-left">{leftContent}</div>
+        <div
+          className={`header-left ${currentPlayer === "black" ? "pulse" : ""}`}
+        >
+          {leftContent}
+        </div>
         <h1 className="header-title">{title}</h1>
-        <div className="header-right">{rightContent}</div>
+        <div
+          className={`header-right ${currentPlayer === "white" ? "pulse" : ""}`}
+        >
+          {rightContent}
+        </div>
       </div>
 
       <div className="header-subtitle">

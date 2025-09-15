@@ -14,8 +14,9 @@ const GameContainer = () => {
     return emptyBoard;
   };
 
-  const [board, setBoard] = useState(createEmptyBoard);
   const [seconds, setSeconds] = useState(0);
+  const [board, setBoard] = useState(createEmptyBoard);
+  const [currentPlayer, setCurrentPlayer] = useState("black");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,7 +27,15 @@ const GameContainer = () => {
   }, []);
 
   const handleCellClick = (row, col) => {
-    console.log("HELLO");
+    if (board[row][col] !== null) {
+      return;
+    }
+
+    const newBoard = [...board];
+    newBoard[row][col] = currentPlayer;
+    setBoard(newBoard);
+
+    setCurrentPlayer(currentPlayer === "black" ? "white" : "black");
   };
 
   const handleRestart = () => {
@@ -37,10 +46,11 @@ const GameContainer = () => {
   return (
     <div className="game-container">
       <Header
-        tittle="Goumoku"
+        title="Goumoku"
         seconds={seconds}
         leftContent={<span>Player 1</span>}
         rightContent={<span>Player 2</span>}
+        currentPlayer={currentPlayer}
       />
       <GameComponent board={board} onCellClick={handleCellClick} />
       <Footer buttonText="Restart" onButtonClick={handleRestart} />
