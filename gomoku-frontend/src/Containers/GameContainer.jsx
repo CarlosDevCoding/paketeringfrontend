@@ -47,7 +47,7 @@ const GameContainer = () => {
   return (
     <div className="game-container">
       <Header
-        title="Goumoku"
+        title="Gomoku"
         seconds={seconds}
         leftContent={<span>Player 1</span>}
         rightContent={<span>Player 2</span>}

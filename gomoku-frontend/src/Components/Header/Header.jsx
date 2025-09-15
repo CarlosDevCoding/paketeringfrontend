@@ -1,4 +1,6 @@
 import "./Header.css";
+import lilo from "../../assets/lilo.png";
+import stitch from "../../assets/stitch.png";
 
 export default function Header({
   title,
@@ -16,28 +18,27 @@ export default function Header({
 
   return (
     <header className="app-header">
-      <div className="header-top">
+      <div>
+        <h1 className="header-title">{title}</h1>
+      </div>
+      <div className="header-player">
         <div
           className={`header-left ${currentPlayer === "black" ? "pulse" : ""}`}
         >
-          {leftContent}
+          <h3>{leftContent}</h3>
+          <img src={lilo} />
         </div>
-        <h1 className="header-title">{title}</h1>
         <div
           className={`header-right ${currentPlayer === "white" ? "pulse" : ""}`}
         >
-          {rightContent}
+          <h3>{rightContent}</h3>
+          <img src={stitch} />
         </div>
       </div>
-      <div className="header-top">
-        <div className="header-left">{leftContent}</div>
-        <div className="header-center">
-          <button className="score-btn">Score</button>
-          <div className="timer">Time: {formatTime(seconds)}</div>
-        </div>
-        <div className="header-right">{rightContent}</div>
+      <div>
+        <h3 className="timer">Time: {formatTime(seconds)}</h3>
+        <button className="score-btn">Scoreboard</button>
       </div>
-      <h1 className="header-title">{title}</h1>
     </header>
   );
 }
