@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import GameComponent from "../Components/GameComponent/GameComponent";
 import "./GameBoardContainer.css";
 import Footer from "../Components/Footer/Footer";
@@ -6,6 +7,10 @@ import Header from "../Components/Header/Header";
 import ChatComponent from "../Components/ChatComponent/ChatComponent";
 
 const GameContainer = () => {
+  const location = useLocation();
+  const player1 = location.state?.player1 || "Player 1";
+  const player2 = location.state?.player2 || "Player 2";
+
   const createEmptyBoard = () => {
     const emptyBoard = Array(15)
       .fill(null)
@@ -111,7 +116,7 @@ const GameContainer = () => {
     setWinner(null);
     setMessages([
       { sender: "player1", text: "hej! Lycka till!" },
-      { sender: "player2", text: "Tack du mded!" },
+      { sender: "player2", text: "Tack du med!" },
     ]);
   };
 
@@ -119,14 +124,15 @@ const GameContainer = () => {
     <div className="game-container">
       {winner && (
         <div className="winner-banner">
-          Winner: {winner === "black" ? "Player 1" : "Player 2"}
+          Winner: {winner === "black" ? player1 : player2}!<br />
+          Click "New Game" to play again.
         </div>
       )}
       <Header
         title="Gomoku"
         seconds={seconds}
-        leftContent={<span>Player 1</span>}
-        rightContent={<span>Player 2</span>}
+        leftContent={<span>{player1}</span>}
+        rightContent={<span>{player2}</span>}
         currentPlayer={currentPlayer}
       />
       <div className="content">

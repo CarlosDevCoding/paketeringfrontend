@@ -1,13 +1,14 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router";
+import { useNavigate } from "react-router-dom";
 import "./HomeScreen.css";
 
 const HomeScreen = () => {
   const [player1, setPlayer1] = useState("");
-  const player1Ref = useRef(null);
+  const [player2, setPlayer2] = useState("");
+  const navigate = useNavigate();
 
-  const handleInput = (e) => {
-    setPlayer1(e.target.innerText);
+  const handleStartGame = () => {
+    navigate("/game", { state: { player1, player2 } });
   };
 
   return (
@@ -20,12 +21,11 @@ const HomeScreen = () => {
             <circle cx="24" cy="16" r="8" stroke="#222" strokeWidth="2" />
             <path d="M12 40c0-6.627 7.163-12 16-12s16 5.373 16 12" stroke="#222" strokeWidth="2" fill="none" />
           </svg>
-          <span
+          <input
             className="player-input"
-            contentEditable="true"
-            ref={player1Ref}
-            onInput={handleInput}
-            data-placeholder="Player 1"
+            placeholder="Player 1"
+            value={player1}
+            onChange={e => setPlayer1(e.target.value)}
           />
         </div>
         <div className="player">
@@ -33,12 +33,11 @@ const HomeScreen = () => {
             <circle cx="24" cy="16" r="8" stroke="#222" strokeWidth="2" />
             <path d="M12 40c0-6.627 7.163-12 16-12s16 5.373 16 12" stroke="#222" strokeWidth="2" fill="none" />
           </svg>
-         <span
+          <input
             className="player-input"
-            contentEditable="true"
-            ref={player1Ref}
-            onInput={handleInput}
-            data-placeholder="Player 2"
+            placeholder="Player 2"
+            value={player2}
+            onChange={e => setPlayer2(e.target.value)}
           />
         </div>
       </div>
@@ -48,11 +47,8 @@ const HomeScreen = () => {
           <div>Player 1</div> 
           <div>Player 2</div>          
           <div>Player 3</div>
-          <div><br /></div>
         </div>
-        <Link to="/game">
-          <button className="new-game-btn">New Game</button>
-        </Link>
+        <button className="new-game-btn" onClick={handleStartGame} disabled={!player1 || !player2}>New Game</button>
       </div>
     </div>
   );
