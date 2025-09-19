@@ -10,7 +10,7 @@
   border-radius: 3px;
   background: #fff;
   outline: none;
-  /* Optional: mimic input focus */
+ 
 }
 .player-input:focus {
   border-color: #555;

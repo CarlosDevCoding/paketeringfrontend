@@ -8,7 +8,7 @@
 .footer-inner {
   display: flex;
   justify-content: center;
-  gap: 1rem; /* så de inte sitter ihop */
+  gap: 1rem; 
 }
 
 .footer-button {
