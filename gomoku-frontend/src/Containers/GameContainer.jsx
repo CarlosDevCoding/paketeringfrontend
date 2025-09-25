@@ -87,6 +87,7 @@ const GameContainer = () => {
                     <p>Loading game</p>
                 )}
             </div>
+            <Footer />
         </div>
     )
 }
