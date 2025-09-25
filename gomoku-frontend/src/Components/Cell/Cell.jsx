@@ -1,5 +1,12 @@
-import "./Cell.css";
+import "./Cell.css"
 
-export default function Cell({ value, onClick }) {
-  return <div className={`cell ${value || "empty"}`} onClick={onClick}></div>;
+export default function Cell({ value, owned, onClick }) {
+    return (
+        <div
+            className={`cell ${
+                value && owned ? "black" : value && !owned ? "white" : "empty"
+            }`}
+            onClick={onClick}
+        ></div>
+    )
 }

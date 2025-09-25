@@ -1,5 +1,6 @@
 .board {
     display: grid;
+    grid-template-columns: repeat(15, 1fr);
     grid-template-rows: repeat(15, 1fr);
     gap: 1px;
     background-color: #654321;
@@ -7,10 +8,4 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 50px;
-}
-
-.row {
-    display: grid;
-    grid-template-columns: repeat(15, 1fr);
-    gap: 1px;
 }

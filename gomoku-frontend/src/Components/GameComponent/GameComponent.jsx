@@ -1,10 +1,26 @@
 import "./GameBoardComponent.css"
 import Cell from "../Cell/Cell.jsx"
 
-export default function GameComponent({ board, onCellClick }) {
+export default function GameComponent({ game, player, onCellClick }) {
+    console.log(game.field)
     return (
         <div className="board">
-            {board.map((row, rowIndex) => (
+            {game.field.map((cell, cellIndex) => {
+                return (
+                    <Cell
+                        key={cellIndex}
+                        value={cell}
+                        owned={cell === player ? true : false}
+                        onClick={() => onCellClick(cellIndex)}
+                    ></Cell>
+                )
+            })}
+        </div>
+    )
+}
+
+/*
+            {game.field.map((row, rowIndex) => (
                 <div key={rowIndex} className="row">
                     {row.map((cell, colIndex) => (
                         <Cell
@@ -15,6 +31,4 @@ export default function GameComponent({ board, onCellClick }) {
                     ))}
                 </div>
             ))}
-        </div>
-    )
-}
+*/

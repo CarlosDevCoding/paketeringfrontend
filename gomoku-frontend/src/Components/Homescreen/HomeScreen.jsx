@@ -4,10 +4,12 @@ import "./HomeScreen.css"
 
 const HomeScreen = () => {
     const [player, setPlayer] = useState("")
+    const [gameId, setGameId] = useState("")
+
     const navigate = useNavigate()
 
-    const handleStartGame = () => {
-        navigate("/game", { state: { player } })
+    const goToGame = () => {
+        navigate("/game", { state: { player, gameId } })
     }
 
     return (
@@ -40,12 +42,17 @@ const HomeScreen = () => {
                 </div>
             </div>
             <div className="game-action-wrapper">
-                <button className="game-btn" onClick={handleStartGame} disabled={!player}>
+                <button className="game-btn" onClick={goToGame} disabled={!player}>
                     New Game
                 </button>
                 <div className="join-game-wrapper">
-                    <input type="text" placeholder="Game ID?" />
-                    <button className="game-btn" onClick={handleStartGame} disabled={!player}>
+                    <input
+                        type="text"
+                        placeholder="Game ID?"
+                        value={gameId}
+                        onChange={(e) => setGameId(e.target.value)}
+                    />
+                    <button className="game-btn" onClick={goToGame} disabled={!player}>
                         Join
                     </button>
                 </div>
