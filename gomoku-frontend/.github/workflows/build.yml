@@ -1,0 +1,28 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [main] # körs när ni pushar till main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Hämta koden
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # 2. Installera Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      # 3. Installera dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Bygg projektet
+      - name: Build project
+        run: npm run build
