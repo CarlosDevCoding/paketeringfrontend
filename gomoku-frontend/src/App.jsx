@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import GameContainer from "./Containers/GameContainer";
 import HomeScreen from "./Components/Homescreen/HomeScreen";
-import "./app.css";
+import "./App.css";
 
 function App() {
   return (
